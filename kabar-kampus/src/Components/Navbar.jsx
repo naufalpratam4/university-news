@@ -23,7 +23,7 @@ export default function NavbarPage() {
           <Nav className="m-auto"></Nav>
         </Container>
       </Navbar>
-      <hr style={{ border: "2px solid black" }} />
+      <hr style={{ border: "2px solid blue" }} />
     </>
   );
 }
