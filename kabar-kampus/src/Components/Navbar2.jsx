@@ -23,7 +23,7 @@ export default function Navbar2() {
             <Nav.Link href="#pricing">My News</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
           </Nav>
-          <Link to="/login">
+          <Link as={Link} to="/login">
             <Button>Login</Button>
           </Link>
         </Container>
