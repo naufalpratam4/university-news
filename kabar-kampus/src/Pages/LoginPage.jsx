@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import NavbarPage from "../Components/Navbar";
+import FooterPage from "../Components/FooterPage";
 
 export default function LoginPage() {
   const [validated, setValidated] = useState(false);
@@ -71,6 +72,7 @@ export default function LoginPage() {
           </Button>
         </Form>
       </div>
+      <FooterPage />
     </div>
   );
 }
