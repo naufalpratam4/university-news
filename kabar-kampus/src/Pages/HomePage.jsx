@@ -1,4 +1,5 @@
 import ButtonAddBerita from "../Components/ButtonAddBerita";
+import CardNews from "../Components/CardNews";
 import CarouselPage from "../Components/CarouselFeat";
 import Navbar2 from "../Components/Navbar2";
 import SearchNews from "../Components/SearchNews";
@@ -17,6 +18,23 @@ export default function HomePage() {
           <SearchNews />
         </div>
       </Stack>
+
+      <div
+        className="container"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <div className="row">
+          <div className="col-lg-4">
+            <CardNews />
+          </div>
+          <div className="col-lg-4">
+            <CardNews />
+          </div>
+          <div className="col-lg-4">
+            <CardNews />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
