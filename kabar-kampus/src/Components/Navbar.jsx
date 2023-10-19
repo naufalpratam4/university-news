@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import { Link } from "react-router-dom";
 export default function NavbarPage() {
   const titleUniv = "UNIVERSITAS NEGERI SEMARANG";
   return (
@@ -14,7 +14,8 @@ export default function NavbarPage() {
             width="40"
           />
           <Navbar.Brand
-            href="#home"
+            as={Link}
+            to="/"
             style={{ paddingTop: "20px", paddingLeft: "5px" }}
           >
             {titleUniv}
@@ -22,7 +23,7 @@ export default function NavbarPage() {
           <Nav className="m-auto"></Nav>
         </Container>
       </Navbar>
-      <hr style={{ border: "2px solid black" }} />
+      <hr style={{ border: "2px solid blue" }} />
     </>
   );
 }
