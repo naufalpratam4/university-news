@@ -1,4 +1,3 @@
-import NavbarPage from "../Components/Navbar";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -20,37 +19,23 @@ export default function LoginPage() {
   };
   return (
     <div className="container mt-5">
-      <NavbarPage title="LOGIN" />
+      <h2 className="text-center fw-bold pb-3">Login</h2>
       <div className="container" style={{ width: "800px" }}>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="4" controlId="validationCustom01">
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="First name"
-                defaultValue="Mark"
-              />
+            <Form.Group controlId="validationCustom01">
+              <Form.Label>NIM</Form.Label>
+              <Form.Control required type="number" placeholder="NIM" />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustom02">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Last name"
-                defaultValue="Otto"
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-              <Form.Label>Username</Form.Label>
+
+            <Form.Group controlId="validationCustomUsername">
+              <Form.Label className="pt-3">Email</Form.Label>
               <InputGroup hasValidation>
                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                 <Form.Control
                   type="text"
-                  placeholder="Username"
+                  placeholder="Email"
                   aria-describedby="inputGroupPrepend"
                   required
                 />
@@ -59,30 +44,16 @@ export default function LoginPage() {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="validationCustom03">
-              <Form.Label>City</Form.Label>
-              <Form.Control type="text" placeholder="City" required />
+
+            <Form.Group className="mb-2 pt-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" required />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid city.
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="3" controlId="validationCustom04">
-              <Form.Label>State</Form.Label>
-              <Form.Control type="text" placeholder="State" required />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid state.
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="3" controlId="validationCustom05">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control type="text" placeholder="Zip" required />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid zip.
+                Please choose a username.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
+
           <Form.Group className="mb-3">
             <Form.Check
               required
@@ -91,7 +62,12 @@ export default function LoginPage() {
               feedbackType="invalid"
             />
           </Form.Group>
-          <Button type="submit">Submit form</Button>
+          <Button
+            type="submit"
+            style={{ background: "#294A70", width: "100%" }}
+          >
+            Login
+          </Button>
         </Form>
       </div>
     </div>
