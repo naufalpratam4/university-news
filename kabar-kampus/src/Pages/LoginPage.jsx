@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
+import NavbarPage from "../Components/Navbar";
 
 export default function LoginPage() {
   const [validated, setValidated] = useState(false);
@@ -18,7 +19,8 @@ export default function LoginPage() {
   };
   return (
     <div className="container mt-5">
-      <h2 className="text-center fw-bold pb-3">Login</h2>
+      <NavbarPage />
+      <h2 className="text-center fw-bold pb-1">Login</h2>
       <div className="container" style={{ width: "800px" }}>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
