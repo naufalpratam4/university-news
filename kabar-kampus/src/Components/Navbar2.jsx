@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
+import { Link } from "react-router-dom";
+
 export default function Navbar2() {
   const titleUniv = "UNIVERSITAS NEGERI SEMARANG";
 
@@ -21,7 +23,9 @@ export default function Navbar2() {
             <Nav.Link href="#pricing">My News</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
           </Nav>
-          <Button>Login</Button>
+          <Link to="/login">
+            <Button>Login</Button>
+          </Link>
         </Container>
       </Navbar>
     </>
