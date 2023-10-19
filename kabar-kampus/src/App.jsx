@@ -3,6 +3,8 @@ import LoginPage from "./pages/LoginPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Navbar2 from "./Components/Navbar2";
+import DetailNews from "./Pages/DetailNews";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -11,6 +13,7 @@ const App = () => {
           <Route path="/" exact element={<HomePage />} />
           <Route path="/login" exact element={<LoginPage />} />
           <Route path="/nav" exact element={<Navbar2 />} />
+          <Route path="/Detail" exact element={<DetailNews />} />
         </Routes>
       }
     </BrowserRouter>
