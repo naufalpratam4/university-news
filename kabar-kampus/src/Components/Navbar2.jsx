@@ -7,11 +7,11 @@ export default function Navbar2() {
 
   return (
     <>
-      <Navbar data-bs-theme="light" className="pt-4">
+      <Navbar data-bs-theme="light" pt-2 pb-2>
         <Container>
           <img
             src="asset/img/Logo_Universitas_Negeri_Semarang.png"
-            alt=""
+            alt="logo unnes"
             width={"3%"}
           />
           <Navbar.Brand href="#home">{titleUniv}</Navbar.Brand>
@@ -24,7 +24,6 @@ export default function Navbar2() {
           <Button>Login</Button>
         </Container>
       </Navbar>
-      <hr style={{ border: "2px solid black" }} />
     </>
   );
 }
