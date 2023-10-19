@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 export default function NavbarPage(props) {
   return (
     <>
-      <Navbar data-bs-theme="light" style={{ fontFamily: "Poppins" }}>
+      <Navbar data-bs-theme="light">
         <Container>
           <Navbar.Brand href="#home" style={{ paddingTop: "20px" }}>
             {props.title}
