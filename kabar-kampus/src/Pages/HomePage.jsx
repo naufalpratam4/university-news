@@ -4,6 +4,7 @@ import CarouselPage from "../Components/CarouselFeat";
 import Navbar2 from "../Components/Navbar2";
 import SearchNews from "../Components/SearchNews";
 import Stack from "react-bootstrap/Stack";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -11,9 +12,11 @@ export default function HomePage() {
       <Navbar2 />
       <CarouselPage />
       <Stack direction="horizontal" gap={3} className="container">
-        <div className="p-2">
-          <ButtonAddBerita />
-        </div>
+        <Link to="/AddNews">
+          <div className="p-2">
+            <ButtonAddBerita />
+          </div>
+        </Link>
         <div className="p-2 ms-auto">
           <SearchNews />
         </div>
