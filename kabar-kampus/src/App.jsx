@@ -6,6 +6,7 @@ import Navbar2 from "./Components/Navbar2";
 import DetailNews from "./Pages/DetailNews";
 import AddNews from "./Pages/AddNews";
 import NewsData from "./Pages/NewsData";
+import AdminRegister from "./Components/AdminRegister";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/Detail" exact element={<DetailNews />} />
           <Route path="/AddNews" exact element={<AddNews />} />
           <Route path="/NewsData" exact element={<NewsData />} />
+          <Route path="/AdminRegister" exact element={<AdminRegister />} />
         </Routes>
       }
     </BrowserRouter>
