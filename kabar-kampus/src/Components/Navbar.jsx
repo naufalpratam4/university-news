@@ -1,26 +1,16 @@
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 export default function NavbarPage() {
-  const titleUniv = "Kabar Kampus";
   return (
     <>
       <Navbar data-bs-theme="light">
-        <Container>
-          <img
-            alt=""
-            src="asset/img/Logo_Universitas_Negeri_Semarang.png"
-            width="40"
-          />
-          <Navbar.Brand
-            as={Link}
-            to="/"
-            style={{ paddingTop: "20px", paddingLeft: "5px" }}
-          >
-            {titleUniv}
+        <Container className="pt-3">
+          <Navbar.Brand>
+            <Link to="/">
+              <img src="asset/img/Kabar Kampus.png" alt="logo" width={"70%"} />
+            </Link>
           </Navbar.Brand>
-          <Nav className="m-auto"></Nav>
         </Container>
       </Navbar>
       <hr style={{ border: "2px solid black" }} />

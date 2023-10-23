@@ -11,12 +11,13 @@ export default function Navbar2() {
     <>
       <Navbar data-bs-theme="light" pb-2>
         <Container>
-          <img
-            src="asset/img/Logo_Universitas_Negeri_Semarang.png"
-            alt="logo unnes"
-            width={"3%"}
-          />
-          <Navbar.Brand href="#home">{titleUniv}</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <img
+              src="asset/img/Kabar Kampus.png"
+              alt="logo unnes"
+              width={"70%"}
+            />
+          </Navbar.Brand>
           <Nav className="ms-auto fw-bold pe-2">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">News</Nav.Link>

@@ -1,6 +1,6 @@
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import ButtonPrimary from "../Components/button/ButtonPrimary";
 
 function CardNews() {
   return (
@@ -16,9 +16,12 @@ function CardNews() {
           bulk of the card's content.
         </Card.Text>
 
-        <Link to="/detail">
-          <Button variant="primary">Go somewhere</Button>
-        </Link>
+        <div className="" style={{ justifyContent: "space-around" }}>
+          <p>Lorem.</p>
+          <Link to="/detail">
+            <ButtonPrimary />
+          </Link>
+        </div>
       </Card.Body>
     </Card>
   );
