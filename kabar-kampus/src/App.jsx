@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage";
 import Navbar2 from "./Components/Navbar2";
 import DetailNews from "./Pages/DetailNews";
 import AddNews from "./Pages/AddNews";
+import NewsData from "./Pages/NewsData";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/nav" exact element={<Navbar2 />} />
           <Route path="/Detail" exact element={<DetailNews />} />
           <Route path="/AddNews" exact element={<AddNews />} />
+          <Route path="/NewsData" exact element={<NewsData />} />
         </Routes>
       }
     </BrowserRouter>

@@ -9,7 +9,7 @@ export default function Navbar2() {
 
   return (
     <>
-      <Navbar data-bs-theme="light" pt-2 pb-2>
+      <Navbar data-bs-theme="light" pb-2>
         <Container>
           <img
             src="asset/img/Logo_Universitas_Negeri_Semarang.png"
