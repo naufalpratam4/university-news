@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import { Link } from "react-router-dom";
 
 export default function Navbar2() {
-  const titleUniv = "UNIVERSITAS NEGERI SEMARANG";
+  const titleUniv = "Kabar Kampus";
 
   return (
     <>

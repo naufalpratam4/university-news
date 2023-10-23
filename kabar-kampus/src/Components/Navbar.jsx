@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 export default function NavbarPage() {
-  const titleUniv = "UNIVERSITAS NEGERI SEMARANG";
+  const titleUniv = "Kabar Kampus";
   return (
     <>
       <Navbar data-bs-theme="light">
