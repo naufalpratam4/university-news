@@ -1,10 +1,12 @@
-import ButtonAddBerita from "../Components/ButtonAddBerita";
 import CardNews from "../Components/CardNews";
 import CarouselPage from "../Components/CarouselFeat";
 import Navbar2 from "../Components/Navbar2";
 import SearchNews from "../Components/SearchNews";
 import Stack from "react-bootstrap/Stack";
 import { Link } from "react-router-dom";
+import ButtonPrimary from "../Components/button/ButtonPrimary";
+import ToggleButtonPrimary from "../Components/button/ToggleButtonPrimary";
+import KotakBerita from "../Components/KotakBerita/KotakBerita";
 
 export default function HomePage() {
   return (
@@ -14,7 +16,7 @@ export default function HomePage() {
       <Stack direction="horizontal" gap={3} className="container">
         <Link to="/AddNews">
           <div className="p-2">
-            <ButtonAddBerita />
+            <ButtonPrimary nameBtn="+ Add News" />
           </div>
         </Link>
         <div className="p-2 ms-auto">
@@ -35,6 +37,52 @@ export default function HomePage() {
           </div>
           <div className="col-lg-4">
             <CardNews />
+          </div>
+        </div>
+      </div>
+
+      {/* kategori */}
+      <div className="container mt-3">
+        <div className="row">
+          <div className="col-lg-8">
+            <h2 className="fw-bold">⭐ News Sport</h2>
+            <div className="imageThumnail">
+              <img
+                src="https://images5.alphacoders.com/121/1214059.png"
+                width={"100%"}
+                style={{ paddingBottom: "10px", borderRadius: "20px" }} // 9 divided by 16 (aspect ratio)
+                alt=""
+              />
+            </div>
+
+            {/* kotak berita */}
+            <div
+              className=""
+              style={{
+                width: "700px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+            </div>
+            <div
+              className=""
+              style={{
+                width: "700px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+            </div>
+          </div>
+
+          {/* kanan */}
+          <div className="col-lg-4">
+            <ToggleButtonPrimary />
           </div>
         </div>
       </div>

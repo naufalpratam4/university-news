@@ -94,9 +94,13 @@ export default function LoginPage() {
           </Form.Group>
           <Button
             type="submit"
-            style={{ background: "#294A70", width: "100%" }}
+            style={{
+              background: "#294A70",
+              width: "100%",
+              marginBottom: "10px",
+            }}
           >
-            Login
+            Add News
           </Button>
         </Form>
       </div>

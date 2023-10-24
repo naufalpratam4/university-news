@@ -3,10 +3,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/esm/Button";
 import { Link } from "react-router-dom";
+import ButtonPrimary from "./button/ButtonPrimary";
 
 export default function Navbar2() {
-  const titleUniv = "Kabar Kampus";
-
   return (
     <>
       <Navbar data-bs-theme="light" pb-2>
@@ -25,7 +24,7 @@ export default function Navbar2() {
             <Nav.Link href="#pricing">About</Nav.Link>
           </Nav>
           <Link as={Link} to="/login">
-            <Button>Login</Button>
+            <ButtonPrimary nameBtn="Login" />
           </Link>
         </Container>
       </Navbar>

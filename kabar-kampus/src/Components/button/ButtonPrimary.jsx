@@ -4,7 +4,7 @@ import Button from "react-bootstrap/esm/Button";
 function ButtonPrimary(props) {
   return (
     <>
-      <Button style={{ background: "#294A70" }}>Lihat Selengkapnya</Button>
+      <Button style={{ background: "#294A70" }}>{props.nameBtn}</Button>
     </>
   );
 }

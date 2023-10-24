@@ -5,7 +5,7 @@ export default function NavbarPage() {
   return (
     <>
       <Navbar data-bs-theme="light">
-        <Container className="pt-3">
+        <Container className="mt-3">
           <Navbar.Brand>
             <Link to="/">
               <img src="asset/img/Kabar Kampus.png" alt="logo" width={"70%"} />

@@ -19,7 +19,7 @@ export default function LoginPage() {
     setValidated(true);
   };
   return (
-    <div className="container mt-5">
+    <div className="container ">
       <NavbarPage />
       <h2 className="text-center fw-bold pb-1">Login</h2>
       <div className="container" style={{ width: "800px" }}>
