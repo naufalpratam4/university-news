@@ -11,11 +11,10 @@ function ToggleButtonPrimary() {
       case 1:
         return (
           <>
-            <KotakBerita srcImg="asset/img/nashwa.jpg" />
-            <KotakBerita srcImg="asset/img/nashwa.jpg" />
-            <KotakBerita srcImg="asset/img/nashwa.jpg" />
-            <KotakBerita srcImg="asset/img/nashwa.jpg" />
-            <KotakBerita srcImg="asset/img/nashwa.jpg" />
+            <KotakBerita srcImg="asset/img/lewis.jpg" />
+            <KotakBerita srcImg="asset/img/lewis.jpg" />
+            <KotakBerita srcImg="asset/img/lewis.jpg" />
+            <KotakBerita srcImg="asset/img/lewis.jpg" />
           </>
         );
       case 2:
@@ -23,7 +22,7 @@ function ToggleButtonPrimary() {
       case 3:
         return (
           <>
-            <img src="asset/img/nashwa.jpg" width={"100%"} alt="Nashwa" />
+            <img src="asset/img/lewis.jpg" width={"100%"} alt="Nashwa" />
           </>
         );
       default:
@@ -51,7 +50,7 @@ function ToggleButtonPrimary() {
           Kategori
         </ToggleButton>
         <ToggleButton id="tbg-radio-3" value={3}>
-          Nashwa
+          Lewis
         </ToggleButton>
       </ToggleButtonGroup>
 

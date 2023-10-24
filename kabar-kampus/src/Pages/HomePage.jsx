@@ -1,6 +1,6 @@
 import CardNews from "../Components/CardNews";
 import CarouselPage from "../Components/CarouselFeat";
-import Navbar2 from "../Components/Navbar2";
+import Navbar2 from "../Components/Navbar/Navbar2";
 import SearchNews from "../Components/SearchNews";
 import Stack from "react-bootstrap/Stack";
 import { Link } from "react-router-dom";
@@ -64,8 +64,8 @@ export default function HomePage() {
                 justifyContent: "center",
               }}
             >
-              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
-              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+              <KotakBerita srcImg="asset/img/lewis.jpg" />
+              <KotakBerita srcImg="asset/img/lewis.jpg" />
             </div>
             <div
               className=""
@@ -75,8 +75,8 @@ export default function HomePage() {
                 justifyContent: "center",
               }}
             >
-              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
-              <KotakBerita srcImg="asset/img/nashwa2.jpg" />
+              <KotakBerita srcImg="asset/img/lewis.jpg" />
+              <KotakBerita srcImg="asset/img/lewis.jpg" />
             </div>
           </div>
 

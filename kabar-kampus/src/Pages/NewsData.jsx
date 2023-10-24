@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarPage from "../Components/Navbar";
+import NavbarPage from "../Components/Navbar/Navbar";
 
 function NewsData() {
   return (
