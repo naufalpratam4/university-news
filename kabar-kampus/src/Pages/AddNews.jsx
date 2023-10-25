@@ -14,6 +14,9 @@ export default function AddNews() {
     const form = event.currentTarget;
 
     if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      setValidated(true);
       alert("Tidak boleh kosong, harap mengisi form");
       return;
     } else {
@@ -21,16 +24,18 @@ export default function AddNews() {
       const emailInput = form.elements.Email;
       const newsTittleInput = form.elements.NewsTittle;
       const newsContentInput = form.elements.NewsContent;
+      const newsCategoryInput = form.elements.NewsCategory;
 
       event.preventDefault();
       try {
         const response = await axios.post(
-          "https://65239ce1ea560a22a4e88ce2.mockapi.io/Berita",
+          "https://kabar-kampus-default-rtdb.firebaseio.com/berita.json",
           {
             Author: authorInput.value,
             Email: emailInput.value,
             NewsTittle: newsTittleInput.value,
             NewsContent: newsContentInput.value,
+            NewsCategory: newsCategoryInput.value,
           }
         );
 
@@ -38,7 +43,7 @@ export default function AddNews() {
         alert("Berita berhasil ditambahkan!");
 
         // Mengarahkan ke halaman berita setelah menambahkan
-        // window.location.href = "/berita"; // Ganti dengan path yang sesuai
+        // window.location.href = "/berita";
       } catch (error) {
         console.error("Error adding news:", error);
       }
@@ -94,10 +99,36 @@ export default function AddNews() {
               </InputGroup>
             </Form.Group>
 
+            {/* kategori */}
+            <div className="mt-3">
+              <label htmlFor="">News Category</label>
+              <Form.Select
+                name="NewsCategory"
+                aria-label="Default select example"
+                required
+              >
+                <option></option>
+                <option value="College">College</option>
+                <option value="Sport">Sport</option>
+                <option value="Politic">Politic</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                Please choose a username.
+              </Form.Control.Feedback>
+            </div>
+
+            {/* img */}
+            {/* <Form.Group controlId="formFile" className="mt-3">
+              <Form.Label>Default file input example</Form.Label>
+              <Form.Control type="file" required />
+              <Form.Control.Feedback type="invalid">
+                Please choose a username.
+              </Form.Control.Feedback>
+            </Form.Group> */}
             {/* deskripsi */}
             <Form.Group className="pt-2" controlId="NewsContent">
-              <Form.Label>isi Konten</Form.Label>
-              <Form.Control as="textarea" rows={3} required />
+              <Form.Label>Content</Form.Label>
+              <Form.Control as="textarea" rows={5} required />
               <Form.Control.Feedback type="invalid">
                 Please choose a username.
               </Form.Control.Feedback>
