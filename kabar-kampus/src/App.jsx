@@ -8,6 +8,7 @@ import AddNews from "./Pages/AddNews";
 import NewsData from "./Pages/NewsData";
 import AdminRegister from "./Components/AdminRegister";
 import NewsTableAdmin from "./Pages/NewsTable/NewsTableAdmin";
+import RegisterPage from "./Pages/RegisterPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/login" exact element={<LoginPage />} />
+          <Route path="/register" exact element={<RegisterPage />} />
           <Route path="/nav" exact element={<Navbar2 />} />
           <Route path="/Detail" exact element={<DetailNews />} />
           <Route path="/AddNews" exact element={<AddNews />} />
