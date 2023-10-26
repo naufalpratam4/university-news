@@ -125,6 +125,7 @@ export default function AddNews() {
                 Please choose a username.
               </Form.Control.Feedback>
             </Form.Group> */}
+
             {/* deskripsi */}
             <Form.Group className="pt-2" controlId="NewsContent">
               <Form.Label>Content</Form.Label>
