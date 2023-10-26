@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-
+import Navbar2 from "../../Components/Navbar/Navbar2";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 function TablePage() {
   const [news, setNews] = useState([]);
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = () => {
     axios
-      .get("https://65239ce1ea560a22a4e88ce2.mockapi.io/Berita")
+      .get("https://kabar-kampus-default-rtdb.firebaseio.com/berita.json")
       .then((response) => {
-        setNews(response.data);
+        const newsData = response.data || {};
+        const newsArray = Object.keys(newsData).map((key) => ({
+          id: key,
+          ...newsData[key],
+        }));
+        setNews(newsArray);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -24,7 +30,9 @@ function TablePage() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://65239ce1ea560a22a4e88ce2.mockapi.io/Berita/${id}`)
+      .delete(
+        `https://kabar-kampus-default-rtdb.firebaseio.com/berita/${id}.json`
+      )
       .then(() => {
         fetchData();
       })
@@ -35,8 +43,9 @@ function TablePage() {
 
   return (
     <>
+      <Navbar2 />
       <div className="container mt-5">
-        <h2>News</h2>
+        <h2 className="fw-bold">My News</h2>
         <button className="btn btn-primary mb-3">
           <Link
             to="/addnews"
@@ -54,7 +63,7 @@ function TablePage() {
             <th>Email</th>
             <th>Tittle</th>
             <th>Content</th>
-            <th>Image</th>
+            <th>Category</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -66,25 +75,22 @@ function TablePage() {
               <td>{newsItem.Email}</td>
               <td>{newsItem.NewsTittle}</td>
               <td>{newsItem.NewsContent}</td>
-
+              <td>{newsItem.NewsCategory}</td>
               <td>
-                <img src="asset/img/lewis.jpg" width={"20%"} alt="" />
-              </td>
-              <td>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                  <Button
-                    className="btn btn-danger me-1"
-                    onClick={() => handleDelete(newsItem.id)}
-                  >
-                    Delete
-                  </Button>
-                  <Button
-                    className="btn btn-warning "
-                    onClick={() => handleDelete(newsItem.id)}
-                  >
-                    Update
-                  </Button>
-                </div>
+                {/* ... */}
+                <Button
+                  className="btn btn-danger me-1"
+                  onClick={() => handleDelete(newsItem.id)}
+                >
+                  Delete
+                </Button>
+                <Button
+                  className="btn btn-warning "
+                  // Update button belum diimplementasikan. Anda perlu mengonfigurasi fungsi untuk meng-handle update.
+                >
+                  Update
+                </Button>
+                {/* ... */}
               </td>
             </tr>
           ))}
