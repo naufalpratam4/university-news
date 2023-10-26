@@ -10,7 +10,7 @@ export default function Navbar2() {
     <>
       <Navbar data-bs-theme="light" pb-2>
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               src="asset/img/Kabar Kampus.png"
               alt="logo unnes"
@@ -18,7 +18,7 @@ export default function Navbar2() {
             />
           </Navbar.Brand>
           <Nav className="ms-auto fw-bold pe-2">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#features">News</Nav.Link>
             <Nav.Link href="/MyNews">My News</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
