@@ -19,9 +19,7 @@ export default function Navbar2() {
           </Navbar.Brand>
           <Nav className="ms-auto fw-bold pe-2">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#features">News</Nav.Link>
             <Nav.Link href="/MyNews">My News</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
           </Nav>
           <Link as={Link} to="/login">
             <ButtonPrimary nameBtn="Login" />

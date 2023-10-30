@@ -5,10 +5,17 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
+import MyDatePicker from "../Components/DatePicker";
+import ImageInput from "../Components/InputImage";
 
 export default function AddNews() {
   const [validated, setValidated] = useState(false);
   const [news, setNews] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (image) => {
+    setSelectedImage(image);
+  };
 
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
@@ -25,6 +32,7 @@ export default function AddNews() {
       const newsTittleInput = form.elements.NewsTittle;
       const newsContentInput = form.elements.NewsContent;
       const newsCategoryInput = form.elements.NewsCategory;
+      const newsImageInput = form.elements.newsImage;
 
       event.preventDefault();
       try {
@@ -36,6 +44,7 @@ export default function AddNews() {
             NewsTittle: newsTittleInput.value,
             NewsContent: newsContentInput.value,
             NewsCategory: newsCategoryInput.value,
+            newsImage: newsImageInput.value,
           }
         );
 
@@ -111,23 +120,31 @@ export default function AddNews() {
                 <option value="College">College</option>
                 <option value="Sport">Sport</option>
                 <option value="Politic">Politic</option>
+                <option value="Artist">Artis</option>
+                <option value="Travel">Travel</option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 Please choose a username.
               </Form.Control.Feedback>
             </div>
 
+            {/* datepicker */}
+            <div className="mt-2">
+              <MyDatePicker />
+            </div>
+
             {/* img */}
-            {/* <Form.Group controlId="formFile" className="mt-3">
-              <Form.Label>Default file input example</Form.Label>
-              <Form.Control type="file" required />
-              <Form.Control.Feedback type="invalid">
-                Please choose a username.
-              </Form.Control.Feedback>
-            </Form.Group> */}
+            <Form.Group controlId="newsImage" className="mb-3 mt-2">
+              <Form.Label>Choose Image</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={handleImageChange}
+                accept="image/*"
+              />
+            </Form.Group>
 
             {/* deskripsi */}
-            <Form.Group className="pt-2" controlId="NewsContent">
+            <Form.Group className="pt-1" controlId="NewsContent">
               <Form.Label>Content</Form.Label>
               <Form.Control as="textarea" rows={5} required />
               <Form.Control.Feedback type="invalid">

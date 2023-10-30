@@ -11,10 +11,36 @@ function ToggleButtonPrimary() {
       case 1:
         return (
           <>
-            <KotakBerita srcImg="asset/img/lewis.jpg" />
-            <KotakBerita srcImg="asset/img/lewis.jpg" />
-            <KotakBerita srcImg="asset/img/lewis.jpg" />
-            <KotakBerita srcImg="asset/img/lewis.jpg" />
+            <KotakBerita
+              srcImg="asset/img/sport.jpg"
+              tittleNews="Sport"
+              descriptionNews="Sports news is a short story that informs us about the latest happenings in the world of sports, such as match results, athlete achievements, and team-related news. By reading sports news, we can stay updated and learn more about what's happening in the sports world we enjoy."
+              linkPage="/sport"
+            />
+            <KotakBerita
+              srcImg="asset/img/politic.jpg"
+              tittleNews="Politic"
+              descriptionNews="Political news provides the latest information on political events and developments, including government policies, political actions, and elections. It is crucial for understanding political decisions, policy changes, and current issues that impact society. By reading political news, readers can stay up-to-date with local and global political dynamics."
+              linkPage="/politic"
+            />
+            <KotakBerita
+              srcImg="asset/img/nashwa2.jpg"
+              tittleNews="Artist"
+              descriptionNews="Celebrity news is a brief report on the latest events regarding the lives and careers of celebrities. It includes gossip, achievements, recent projects, and their personal activities. This news provides a quick glimpse into the lives of celebrities, often capturing public attention."
+              linkPage="/artist"
+            />
+            <KotakBerita
+              srcImg="asset/img/kampus.jpg"
+              tittleNews="College"
+              descriptionNews=" Campus life news is a brief report on recent events in universities, covering student activities, campus events, academic achievements, and other important developments. It provides an overview of the atmosphere and recent developments in the academic community."
+              linkPage="/college"
+            />
+            <KotakBerita
+              srcImg="asset/img/travel.jpg"
+              tittleNews="Travel"
+              descriptionNews="Travel news provides the latest information on destinations, tips, and tourism trends. It includes destination recommendations, travel experiences, local cuisine, and updates on regulations or safety. It helps readers plan their trips and stay up-to-date on various aspects of travel."
+              linkPage="/travel"
+            />
           </>
         );
       case 2:
@@ -44,13 +70,10 @@ function ToggleButtonPrimary() {
         style={{ marginBottom: "10px" }}
       >
         <ToggleButton id="tbg-radio-1" value={1}>
-          Trending
+          Category
         </ToggleButton>
         <ToggleButton id="tbg-radio-2" value={2}>
-          Kategori
-        </ToggleButton>
-        <ToggleButton id="tbg-radio-3" value={3}>
-          Lewis
+          Kabar Kampus
         </ToggleButton>
       </ToggleButtonGroup>
 

@@ -2,9 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 function KotakBerita(props) {
   return (
-    <>
+    <Link
+      to={props.linkPage}
+      style={{ textDecoration: "none", color: "black" }}
+    >
       <div
-        style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
       >
         <img
           src={props.srcImg}
@@ -12,17 +18,18 @@ function KotakBerita(props) {
           alt=""
           style={{ verticalAlign: "middle" }}
         />
-        <p style={{ marginLeft: "10px", marginTop: "5px", fontSize: "10px" }}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
-          accusantium vero facilis modi molestiae nobis quis, minima explicabo,
-          quos impedit quidem odio neque, natus ex omnis veritatis. Voluptas,
-          sint iusto.
-          <Link to="#">
-            <p style={{ fontSize: "10px" }}>Lihat Selengkapnya</p>
-          </Link>
-        </p>
+
+        <div className="">
+          <h5 className="fw-bold ms-2 mt-3">{props.tittleNews}</h5>
+          <p style={{ marginLeft: "10px", marginTop: "5px", fontSize: "10px" }}>
+            {props.descriptionNews}
+            <Link to="#">
+              <p style={{ fontSize: "10px" }}>Lihat Selengkapnya</p>
+            </Link>
+          </p>
+        </div>
       </div>
-    </>
+    </Link>
   );
 }
 

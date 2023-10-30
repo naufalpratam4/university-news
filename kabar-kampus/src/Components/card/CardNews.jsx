@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import ButtonPrimary from "../Components/button/ButtonPrimary";
+import ButtonPrimary from "../button/ButtonPrimary";
 
 function CardNews() {
   return (
