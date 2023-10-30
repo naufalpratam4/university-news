@@ -8,7 +8,7 @@ export default function CarouselPage() {
           <img
             className="d-block w-100"
             style={{ height: "56.25%" }}
-            src="https://images5.alphacoders.com/121/1214059.png"
+            src="asset/img/ugm.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -20,7 +20,7 @@ export default function CarouselPage() {
           <img
             className="d-block w-100"
             style={{ height: "56.25%" }}
-            src="https://www.hdcarwallpapers.com/walls/mercedes_amg_f1_m11_eq_performance_4k-HD.jpg"
+            src="asset/img/unnes.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -32,7 +32,7 @@ export default function CarouselPage() {
           <img
             className="d-block w-100"
             style={{ height: "56.25%" }}
-            src="https://images5.alphacoders.com/116/1166226.jpg"
+            src="asset/img/UI.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>

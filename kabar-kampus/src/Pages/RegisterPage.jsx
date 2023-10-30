@@ -5,7 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import NavbarPage from "../Components/Navbar/Navbar";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -20,10 +20,24 @@ export default function LoginPage() {
   return (
     <div className="container ">
       <NavbarPage />
-      <h2 className="text-center fw-bold pb-1">Login</h2>
+      <h2 className="text-center fw-bold pb-1">Register</h2>
       <div className="container" style={{ width: "600px" }}>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
+            <Form.Group controlId="validationCustomUsername">
+              <Form.Label className="pt-3">Nama</Form.Label>
+              <InputGroup hasValidation>
+                <Form.Control
+                  type="text"
+                  placeholder="Email"
+                  aria-describedby="inputGroupPrepend"
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
             <Form.Group controlId="validationCustomUsername">
               <Form.Label className="pt-3">Email</Form.Label>
               <InputGroup hasValidation>
@@ -53,15 +67,8 @@ export default function LoginPage() {
             type="submit"
             style={{ background: "#294A70", width: "100%" }}
           >
-            Login
+            Register
           </Button>
-          <p className="text-center mt-3">Or</p>
-          <button className="btn btn-light" style={{ width: "100%" }}>
-            Sign in with Google 🏡
-          </button>
-          <p>
-            Don't Have an Account? <a href="/register">Sign Up</a>
-          </p>
         </Form>
       </div>
     </div>
