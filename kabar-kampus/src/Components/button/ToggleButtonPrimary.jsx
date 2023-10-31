@@ -35,12 +35,6 @@ function ToggleButtonPrimary() {
               descriptionNews=" Campus life news is a brief report on recent events in universities, covering student activities, campus events, academic achievements, and other important developments. It provides an overview of the atmosphere and recent developments in the academic community."
               linkPage="/college"
             />
-            <KotakBerita
-              srcImg="asset/img/travel.jpg"
-              tittleNews="Travel"
-              descriptionNews="Travel news provides the latest information on destinations, tips, and tourism trends. It includes destination recommendations, travel experiences, local cuisine, and updates on regulations or safety. It helps readers plan their trips and stay up-to-date on various aspects of travel."
-              linkPage="/travel"
-            />
           </>
         );
       case 2:

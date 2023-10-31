@@ -82,7 +82,7 @@ export default function PageSport() {
             <h2 className="fw-bold">🏅 Sport News</h2>
             <div className="imageThumnail">
               <img
-                src="https://images5.alphacoders.com/121/1214059.png"
+                src="asset/img/timnas.jpg"
                 width={"100%"}
                 style={{ paddingBottom: "10px", borderRadius: "20px" }} // 9 divided by 16 (aspect ratio)
                 alt=""
