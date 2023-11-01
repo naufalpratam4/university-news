@@ -8,12 +8,11 @@ export default function CarouselPage() {
           <img
             className="d-block w-100"
             style={{ height: "56.25%" }}
-            src="asset/img/ugm.jpg"
+            src="asset/img/ugmm.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Universitas Gadjah Mada</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -24,8 +23,7 @@ export default function CarouselPage() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Universitas Negeri Semarang</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -36,10 +34,7 @@ export default function CarouselPage() {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Universitas Indonesia</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 function KotakBerita(props) {
   return (
     <Link
@@ -10,6 +11,9 @@ function KotakBerita(props) {
         style={{
           display: "flex",
           alignItems: "center",
+          border: "1px solid #ddd", // Tambahkan properti border di sini
+          borderRadius: "8px", // Tambahkan properti borderRadius jika diperlukan
+          padding: "10px", // Tambahkan properti padding jika diperlukan
         }}
       >
         <img

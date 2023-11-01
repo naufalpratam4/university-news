@@ -1,5 +1,5 @@
 import CardNews from "../../Components/card/CardNews";
-import CarouselPage from "../../Components/CarouselFeat";
+import CarouselPage from "../../Components/CarouselFeat/CarouselFeat";
 import Navbar2 from "../../Components/Navbar/Navbar2";
 import SearchNews from "../../Components/SearchNews";
 import Stack from "react-bootstrap/Stack";

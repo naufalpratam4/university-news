@@ -1,12 +1,11 @@
 import CardNews from "../../Components/card/CardNews";
-import CarouselPage from "../../Components/CarouselFeat";
+import CarouselPage from "../../Components/CarouselFeat/CarouselFeat";
 import Navbar2 from "../../Components/Navbar/Navbar2";
 import SearchNews from "../../Components/SearchNews";
 import Stack from "react-bootstrap/Stack";
 import { Link } from "react-router-dom";
 import ButtonPrimary from "../../Components/button/ButtonPrimary";
 import ToggleButtonPrimary from "../../Components/button/ToggleButtonPrimary";
-import CardNews2 from "../../Components/card/CardNews2";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -112,11 +111,7 @@ export default function PageSport() {
                       }}
                       key={item.id}
                     >
-                      <img
-                        src="asset/img/sportjardim.jpg"
-                        width={"20%"}
-                        alt=""
-                      />
+                      <img src="asset/img/ronaldo.jpg" width={"20%"} alt="" />
                       <div className="ps-4">
                         <h4>{truncateWords(item.NewsTittle, 5)}</h4>
                         <p>
