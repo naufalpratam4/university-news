@@ -1,51 +1,56 @@
+import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import ButtonPrimary from "../button/ButtonPrimary";
+import axios from "axios";
 
 function CardNews() {
-  return (
-    <Card style={{ width: "22rem", marginTop: "10px" }}>
-      <Card.Img
-        variant="top"
-        src="https://images5.alphacoders.com/116/1166226.jpg"
-      />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+  const [news, setNews] = useState([]);
 
-        <div
-          className=""
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="asset/img/Logo_Universitas_Negeri_Semarang.png"
-              alt=""
-              width={"25%"}
-              style={{ paddingBottom: "20px", borderRadius: "50%" }}
-            />
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    axios
+      .get("https://kabar-kampus-default-rtdb.firebaseio.com/berita.json")
+      .then((response) => {
+        const newsData = response.data || {};
+        const newsArray = Object.keys(newsData).map((key) => ({
+          id: key,
+          ...newsData[key],
+        }));
+        setNews(newsArray);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
+
+  // Get the first three items from the news array
+  const firstThreeNews = news.slice(0, 3);
+
+  return (
+    <div>
+      {firstThreeNews.map((item) => (
+        <Card key={item.id} style={{ width: "22rem", marginTop: "10px" }}>
+          <Card.Img variant="top" src={item.imageSrc} />
+          <Card.Body>
+            <Card.Title>{item.NewsTittle}</Card.Title>
+            <Card.Text>{item.NewsContent}</Card.Text>
             <div style={{ marginLeft: "10px" }}>
               <h4 style={{ marginBottom: "-5px", fontWeight: "bold" }}>
-                Naufal
+                {item.Author}
               </h4>
-              <p style={{ fontSize: "14px" }}>12/01/23</p>
+              <p style={{ fontSize: "14px" }}>{item.NewsDate}</p>
+              <Link to={`/detail/${item.id}`}>
+                <ButtonPrimary nameBtn="Baca Selengkapnya" />
+              </Link>
             </div>
-          </div>
-          <Link to="/detail">
-            <ButtonPrimary nameBtn="Baca Selengkapnya" />
-          </Link>
-        </div>
-      </Card.Body>
-    </Card>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
   );
 }
 

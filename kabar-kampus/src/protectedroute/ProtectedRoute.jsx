@@ -1,20 +1,12 @@
 // ProtectedRoute.jsx
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Route, Navigate, Outlet } from "react-router-dom";
+import { database } from "../../config/FirebaseConfig";
 
-const ProtectedRoute = ({ element: Element, isAuthenticated, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      element={
-        isAuthenticated ? (
-          <Element />
-        ) : (
-          <Navigate to="/login" replace state={{ from: rest.location }} />
-        )
-      }
-    />
-  );
+const ProtectedRoute = () => {
+  const isAuthenticated = !!database.currentUser;
+
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" replace />;
 };
 
 export default ProtectedRoute;

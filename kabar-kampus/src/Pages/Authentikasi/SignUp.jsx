@@ -6,6 +6,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import Navbar2 from "../../Components/Navbar/Navbar2";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const SignUpForm = () => {
   const [login, setLogin] = useState(false);
@@ -39,48 +41,51 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="container pt-5" style={{ width: "500px" }}>
-      <h2 className="fw-bold text-center mt-5">
-        {login ? "Sign In" : "Sign Up"}
-      </h2>
-      <Form onSubmit={(e) => handleSubmit(e, login ? "signin" : "signup")}>
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Masukkan email"
-            name="email"
-          />
-        </Form.Group>
+    <>
+      <Navbar />
+      <div className="container pt-5" style={{ width: "500px" }}>
+        <h2 className="fw-bold text-center mt-5">
+          {login ? "Sign In" : "Sign Up"}
+        </h2>
+        <Form onSubmit={(e) => handleSubmit(e, login ? "signin" : "signup")}>
+          <Form.Group controlId="formEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Masukkan email"
+              name="email"
+            />
+          </Form.Group>
 
-        <Form.Group controlId="formPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Masukkan password"
-            name="password"
-          />
-        </Form.Group>
+          <Form.Group controlId="formPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Masukkan password"
+              name="password"
+            />
+          </Form.Group>
 
-        <Button
-          variant="primary"
-          type="submit"
-          className="mt-3"
-          style={{ width: "100%" }}
-        >
-          {login ? "SignIn" : "SignUp"}
-        </Button>
-        <div>
-          {login ? "Don't have an account?" : "Have an account? "}
-          <Link
-            onClick={() => setLogin(!login)}
-            style={{ textDecoration: "none" }}
+          <Button
+            variant="primary"
+            type="submit"
+            className="mt-3"
+            style={{ width: "100%" }}
           >
-            {login ? "sign up" : "sign in"}
-          </Link>
-        </div>
-      </Form>
-    </div>
+            {login ? "SignIn" : "SignUp"}
+          </Button>
+          <div>
+            {login ? "Don't have an account?" : "Have an account? "}
+            <Link
+              onClick={() => setLogin(!login)}
+              style={{ textDecoration: "none" }}
+            >
+              {login ? "sign up" : "sign in"}
+            </Link>
+          </div>
+        </Form>
+      </div>
+    </>
   );
 };
 

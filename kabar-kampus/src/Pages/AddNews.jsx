@@ -5,13 +5,16 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
-import MyDatePicker from "../Components/DatePicker";
-import ImageInput from "../Components/InputImage";
 
 export default function AddNews() {
   const [validated, setValidated] = useState(false);
   const [news, setNews] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   const handleImageChange = (image) => {
     setSelectedImage(image);
@@ -32,9 +35,10 @@ export default function AddNews() {
       const newsTittleInput = form.elements.NewsTittle;
       const newsContentInput = form.elements.NewsContent;
       const newsCategoryInput = form.elements.NewsCategory;
-      const newsImageInput = form.elements.newsImage;
+      const newsDateInput = form.elements.NewsDate;
 
       event.preventDefault();
+
       try {
         const response = await axios.post(
           "https://kabar-kampus-default-rtdb.firebaseio.com/berita.json",
@@ -44,15 +48,12 @@ export default function AddNews() {
             NewsTittle: newsTittleInput.value,
             NewsContent: newsContentInput.value,
             NewsCategory: newsCategoryInput.value,
-            newsImage: newsImageInput.value,
+            NewsDate: newsDateInput.value,
           }
         );
 
         setNews([...news, response.data]);
         alert("Berita berhasil ditambahkan!");
-
-        // Mengarahkan ke halaman berita setelah menambahkan
-        // window.location.href = "/berita";
       } catch (error) {
         console.error("Error adding news:", error);
       }
@@ -130,7 +131,17 @@ export default function AddNews() {
 
             {/* datepicker */}
             <div className="mt-2">
-              <MyDatePicker />
+              <Form.Group controlId="NewsDate">
+                <Form.Label>Select Date</Form.Label>
+                <Form.Control
+                  type="date"
+                  value={selectedDate || ""}
+                  onChange={(e) => handleDateChange(e.target.value)}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </Form.Group>
             </div>
 
             {/* img */}

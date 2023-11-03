@@ -58,23 +58,6 @@ export default function PageSport() {
         </div>
       </Stack>
 
-      <div
-        className="container"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        <div className="row">
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-        </div>
-      </div>
-
       {/* kategori */}
       <div className="container mt-3">
         <div className="row">
@@ -82,7 +65,7 @@ export default function PageSport() {
             <h2 className="fw-bold">🌆 Politic News</h2>
             <div className="imageThumnail">
               <img
-                src="https://images5.alphacoders.com/121/1214059.png"
+                src="asset/img/ugmm.jpg"
                 width={"100%"}
                 style={{ paddingBottom: "10px", borderRadius: "20px" }} // 9 divided by 16 (aspect ratio)
                 alt=""

@@ -38,7 +38,14 @@ function ToggleButtonPrimary() {
           </>
         );
       case 2:
-        return <img src="asset/img/lewis.jpg" width={"100%"} alt="Motor" />;
+        return (
+          <KotakBerita
+            srcImg="asset/img/KabarKampus.jpg"
+            tittleNews="Layanan Lisensi Canva"
+            descriptionNews="Klaim layanan lisensi Canva for education, Hanya tersedia untuk 5000 mahasiswa"
+            linkTo="https://www.instagram.com/p/Cy5FGJepUkK/"
+          />
+        );
       case 3:
         return (
           <>

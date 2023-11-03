@@ -7,10 +7,13 @@ export default function NavbarPage() {
       <Navbar data-bs-theme="light">
         <Container className="mt-3">
           <Navbar.Brand>
-            <Link to="/">
+            <Link to="/home">
               <img src="asset/img/Kabar Kampus.png" alt="logo" width={"70%"} />
             </Link>
           </Navbar.Brand>
+          {/* <Nav className="ms-auto">
+            <a href="">Home</a>
+          </Nav> */}
         </Container>
       </Navbar>
       <hr style={{ border: "2px solid black" }} />

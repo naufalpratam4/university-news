@@ -59,23 +59,6 @@ export default function HomePage() {
         </div>
       </Stack>
 
-      <div
-        className="container"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        <div className="row">
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-          <div className="col-lg-4">
-            <CardNews />
-          </div>
-        </div>
-      </div>
-
       {/* kategori */}
       <div className="container mt-3">
         <div className="row">

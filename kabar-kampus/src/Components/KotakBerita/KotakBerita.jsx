@@ -27,7 +27,7 @@ function KotakBerita(props) {
           <h5 className="fw-bold ms-2 mt-3">{props.tittleNews}</h5>
           <p style={{ marginLeft: "10px", marginTop: "5px", fontSize: "10px" }}>
             {props.descriptionNews}
-            <Link to="#">
+            <Link to={props.linkTO}>
               <p style={{ fontSize: "10px" }}>Lihat Selengkapnya</p>
             </Link>
           </p>

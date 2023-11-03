@@ -12,6 +12,7 @@ function TablePage() {
   const [selectedNews, setSelectedNews] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -97,6 +98,7 @@ function TablePage() {
             <th>Author</th>
             <th>Email</th>
             <th>Tittle</th>
+            <th>Date</th>
             <th>Content</th>
             <th>Category</th>
             <th>Action</th>
@@ -109,6 +111,7 @@ function TablePage() {
               <td>{newsItem.Author}</td>
               <td>{newsItem.Email}</td>
               <td>{newsItem.NewsTittle}</td>
+              <td>{newsItem.NewsDate}</td>
               <td>{newsItem.NewsContent}</td>
               <td>{newsItem.NewsCategory}</td>
               <td>
@@ -134,7 +137,6 @@ function TablePage() {
       </Table>
 
       {/* formulir edit */}
-      {/* Edit Modal */}
       <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Edit News</Modal.Title>
@@ -153,6 +155,7 @@ function TablePage() {
             />
           </Form.Group>
 
+          {/* email */}
           <Form.Group controlId="Author" className="mt-2">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -176,6 +179,20 @@ function TablePage() {
             />
           </Form.Group>
 
+          {/* date */}
+          <Form.Group controlId="NewsDate">
+            <Form.Label>Select Date</Form.Label>
+            <Form.Control
+              type="date"
+              value={selectedDate || ""}
+              onChange={(e) =>
+                setSelectedNews({ ...selectedNews, NewsDate: e.target.value })
+              }
+            />
+            <Form.Control.Feedback type="invalid">
+              Please choose a username.
+            </Form.Control.Feedback>
+          </Form.Group>
           {/* deskripsi */}
           <Form.Group className="pt-2" controlId="NewsContent">
             <Form.Label>Content</Form.Label>
